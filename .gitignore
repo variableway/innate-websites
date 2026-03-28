@@ -14,3 +14,19 @@ next.user-config.*
 node_modules/
 .next/
 .DS_Store
+
+# Build outputs
+dist/
+*.tsbuildinfo
+
+# Logs
+*.log
+npm-debug.log*
+pnpm-debug.log*
+
+# Editor directories
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
