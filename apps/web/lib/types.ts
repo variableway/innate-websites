@@ -14,7 +14,9 @@ export interface NavSection {
 
 export interface Post {
   id: string
+  slug: string
   title: string
+  summary: string
   content: string
   date: string
   author: {
@@ -26,6 +28,11 @@ export interface Post {
   likes: number
   comments: number
   likedBy: string[]
+  tags?: string[]
+  isFeatured?: boolean
+  isEditorsPick?: boolean
+  readTime?: number
+  category?: "article" | "log" | "news"
 }
 
 export interface Course {
@@ -61,4 +68,13 @@ export interface Community {
   price: string
   priceType: string
   organization: string
+}
+
+export type FeedFilter = "all" | "article" | "log" | "news" | "editors-pick"
+
+export interface Tag {
+  id: string
+  name: string
+  slug: string
+  color: string
 }

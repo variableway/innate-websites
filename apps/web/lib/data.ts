@@ -1,4 +1,4 @@
-import type { NavSection, Post, Course, CourseSection, Community } from "./types"
+import type { NavSection, Post, Course, CourseSection, Community, Tag } from "./types"
 
 export const navigationSections: NavSection[] = [
   {
@@ -41,44 +41,357 @@ export const navigationSections: NavSection[] = [
   },
 ]
 
-export const posts: Post[] = [
-  {
-    id: "1",
-    title: "Claude Dispatch 深度分析：Anthropic 的 OpenClaw 应答，以及 AI Agent 平台分野的底层逻辑",
-    content: `调研日期：2026-03-18
+// Tags
+export const tags: Tag[] = [
+  { id: "1", name: "AI", slug: "ai", color: "#8FA68E" },
+  { id: "2", name: "Coding", slug: "coding", color: "#7A9CAE" },
+  { id: "3", name: "Design", slug: "design", color: "#D4845E" },
+  { id: "4", name: "Product", slug: "product", color: "#E89B73" },
+  { id: "5", name: "Career", slug: "career", color: "#9BB5C4" },
+  { id: "6", name: "Tutorial", slug: "tutorial", color: "#A8C5A8" },
+  { id: "7", name: "News", slug: "news", color: "#8B7355" },
+  { id: "8", name: "Experience", slug: "experience", color: "#6B8E9B" },
+]
 
-触发：Anthropic 于 3 月 17 日发布 Claude Dispatch（Cowork 子功能），Latent Space 当天以 Anthropic's Answer to OpenClaw 为标题报道。结合此前的 OpenClaw 深度分析（2026-02-14），本文从产品决策和 axiom 体系两个维度，拆解这次发布的...`,
-    date: "3d",
+// Feed: 个人关注流（模拟用户关注的内容）
+export const feedPosts: Post[] = [
+  {
+    id: "f1",
+    slug: "claude-artifacts-prototyping",
+    title: "Today I learned: 使用 Claude 的 Artifacts 功能快速原型设计",
+    summary: "今天尝试了 Claude 的 Artifacts 功能，发现它在快速原型设计上非常强大。可以直接生成可交互的 React 组件，并且支持实时预览。相比传统流程需要先用 Figma 画原型，现在直接用 Claude 生成可点击的演示版本，效率提升了至少 3 倍。",
+    content: `# Today I learned: 使用 Claude 的 Artifacts 功能快速原型设计
+
+今天尝试了 Claude 的 Artifacts 功能，发现它在快速原型设计上非常强大。
+
+## 使用场景
+
+需要给客户展示一个数据仪表盘的初步设计。传统流程：
+1. 用 Figma 画原型
+2. 交给开发实现
+3. 反复修改
+
+现在用 Claude Artifacts：
+1. 描述需求
+2. 生成可交互的 React 组件
+3. 实时预览和修改
+
+## 效率提升
+
+至少提升了 **3 倍**！
+
+\`\`\`jsx
+// Claude 生成的示例代码
+function Dashboard() {
+  return (
+    <div className="p-4">
+      <h1>数据仪表盘</h1>
+      {/* 组件内容 */}
+    </div>
+  )
+}
+\`\`\`
+
+## 总结
+
+Claude Artifacts 特别适合：
+- 快速原型验证
+- 客户演示
+- 团队协作`,
+    date: "2h",
     author: {
-      name: "Superlinear Academy",
-      avatar: "/avatars/admin.jpg",
-      role: "Admin",
-      memberSince: "January 5, 2026",
+      name: "Alex Chen",
+      avatar: "/avatars/user1.jpg",
+      role: "Member",
+      memberSince: "March 1, 2026",
     },
-    likes: 5,
-    comments: 2,
-    likedBy: ["/avatars/user1.jpg", "/avatars/user2.jpg", "/avatars/user3.jpg"],
+    likes: 12,
+    comments: 4,
+    likedBy: ["/avatars/user2.jpg", "/avatars/user3.jpg"],
+    tags: ["ai", "tutorial"],
+    category: "log",
+    isEditorsPick: false,
+    readTime: 3,
   },
   {
-    id: "2",
-    title: "Attention Residuals：用 Attention 修复 Transformer 深度维度上的信号稀释",
-    content: `Moonshot AI 的 Kimi Team 于 2026 年 3 月 15 日发布了一篇技术报告，挑战了 Transformer 架构中一个存在近十年、每个主流大模型都在使用的基础组件：残差连接（residual connection）。
+    id: "f2",
+    slug: "react-19-use-hook",
+    title: "React 19 新特性尝鲜：use() 函数的实际应用",
+    summary: "React 19 的 use() 函数让数据获取变得更简单了。不再需要 useEffect + useState 的组合，直接在组件中 use(promise) 即可。代码更简洁，错误处理更直观，配合 Suspense 体验很好。",
+    content: `# React 19 新特性尝鲜：use() 函数的实际应用
 
-问题：隐态稀释
+React 19 的 \`use()\` 函数让数据获取变得更简单了。
 
-标准 PreNorm Transformer 中，每一层的工作方式可以简化为：把当前层的输出加回到之前所有层的累积结果上。数学上...`,
-    date: "3d",
+## 传统方式
+
+\`\`\`jsx
+const [data, setData] = useState(null)
+const [loading, setLoading] = useState(true)
+
+useEffect(() => {
+  fetchData().then(data => {
+    setData(data)
+    setLoading(false)
+  })
+}, [])
+\`\`\`
+
+## 新方式
+
+\`\`\`jsx
+const data = use(fetchData())
+\`\`\`
+
+## 好处
+
+1. 代码更简洁
+2. 错误处理更直观
+3. 配合 Suspense 体验很好`,
+    date: "5h",
     author: {
-      name: "Superlinear Academy",
-      avatar: "/avatars/admin.jpg",
-      role: "Admin",
-      memberSince: "January 5, 2026",
+      name: "Sarah Li",
+      avatar: "/avatars/user2.jpg",
+      role: "Member",
+      memberSince: "February 15, 2026",
     },
-    likes: 3,
-    comments: 0,
-    likedBy: ["/avatars/user1.jpg", "/avatars/user4.jpg", "/avatars/user5.jpg"],
+    likes: 8,
+    comments: 2,
+    likedBy: ["/avatars/user1.jpg", "/avatars/user4.jpg"],
+    tags: ["coding", "tutorial"],
+    category: "article",
+    isEditorsPick: true,
+    readTime: 5,
+  },
+  {
+    id: "f3",
+    slug: "ai-coding-week-3",
+    title: "分享我的 AI Coding 学习笔记 - Week 3",
+    summary: "这周主要学习了 Cursor 的高级快捷键、AI 辅助代码审查的最佳实践、如何写更好的 Prompt 让 AI 理解需求。发现一个小技巧：在 Prompt 中加上 'explain your reasoning' 可以让 AI 给出更详细的解释。",
+    content: `# 分享我的 AI Coding 学习笔记 - Week 3
+
+这周主要学习了：
+
+## 学习内容
+
+1. **Cursor 的高级快捷键**
+   - Cmd+K: 快速编辑
+   - Cmd+L: 聊天模式
+   - Tab: 智能补全
+
+2. **AI 辅助代码审查的最佳实践**
+   - 让 AI 解释代码逻辑
+   - 发现潜在 bug
+   - 优化建议
+
+3. **Prompt 技巧**
+
+> 小技巧：加上 "explain your reasoning"
+
+这让 AI 给出更详细的解释，同时也提高了代码质量。`,
+    date: "1d",
+    author: {
+      name: "Mike Wang",
+      avatar: "/avatars/user3.jpg",
+      role: "Member",
+      memberSince: "January 20, 2026",
+    },
+    likes: 15,
+    comments: 6,
+    likedBy: ["/avatars/user1.jpg", "/avatars/user2.jpg", "/avatars/user4.jpg"],
+    tags: ["ai", "coding", "experience"],
+    category: "log",
+    isEditorsPick: false,
+    readTime: 4,
+  },
+  {
+    id: "f4",
+    slug: "design-system-consistency",
+    title: "构建设计系统的一致性：从组件到模式",
+    summary: "设计系统不仅仅是组件库，更重要的是建立一套模式语言。本文分享了如何在团队中推广设计系统，确保产品的一致性和可维护性。",
+    content: `# 构建设计系统的一致性：从组件到模式
+
+设计系统不仅仅是组件库，更重要的是建立一套模式语言。
+
+## 组件 vs 模式
+
+**组件**是具体的 UI 元素：
+- Button
+- Input
+- Card
+
+**模式**是解决特定问题的方案：
+- 表单提交模式
+- 数据展示模式
+- 错误处理模式
+
+## 推广策略
+
+1. 文档先行
+2. 代码示例
+3. 设计审查
+4. 持续迭代`,
+    date: "1d",
+    author: {
+      name: "Emily Zhang",
+      avatar: "/avatars/user5.jpg",
+      role: "Member",
+      memberSince: "February 28, 2026",
+    },
+    likes: 22,
+    comments: 8,
+    likedBy: ["/avatars/user2.jpg", "/avatars/user3.jpg"],
+    tags: ["design", "product"],
+    category: "article",
+    isEditorsPick: true,
+    readTime: 8,
+  },
+  {
+    id: "f5",
+    slug: "career-transition-ai-era",
+    title: "AI 时代的职业转型：从开发者到 AI 工程师",
+    summary: "分享我从传统开发者转型为 AI 工程师的经历。包括学习路径、技能栈转变、以及在转型过程中遇到的挑战和收获。",
+    content: `# AI 时代的职业转型：从开发者到 AI 工程师
+
+分享我的转型经历。
+
+## 背景
+
+做了 5 年传统 Web 开发，去年决定转型 AI 方向。
+
+## 学习路径
+
+1. **基础**：Python、机器学习基础
+2. **框架**：LangChain、LlamaIndex
+3. **实践**：个人项目
+4. **工作**：寻找 AI 相关机会
+
+## 挑战
+
+- 学习曲线陡峭
+- 需要持续跟进最新技术
+- 实践经验不足
+
+## 收获
+
+看到了更广阔的技术世界。`,
+    date: "2d",
+    author: {
+      name: "David Liu",
+      avatar: "/avatars/user6.jpg",
+      role: "Member",
+      memberSince: "January 10, 2026",
+    },
+    likes: 34,
+    comments: 12,
+    likedBy: ["/avatars/user1.jpg", "/avatars/user2.jpg", "/avatars/user5.jpg"],
+    tags: ["career", "ai", "experience"],
+    category: "article",
+    isEditorsPick: false,
+    readTime: 10,
   },
 ]
+
+// Deep News: 官方精选内容（深度分析文章）
+export const newsPosts: Post[] = [
+  {
+    id: "n1",
+    slug: "claude-dispatch-analysis",
+    title: "Claude Dispatch 深度分析：Anthropic 的 OpenClaw 应答，以及 AI Agent 平台分野的底层逻辑",
+    summary: "本文从产品决策和 axiom 体系两个维度，拆解 Claude Dispatch 发布的战略意图。Claude Dispatch 是 Anthropic 对企业工作流的直接回应，与 OpenClaw 相比，更注重「人机协作」而非「AI 替代」。",
+    content: `# Claude Dispatch 深度分析
+
+调研日期：2026-03-18
+
+## 背景
+
+Anthropic 于 3 月 17 日发布 Claude Dispatch（Cowork 子功能）。
+
+## 核心观点
+
+1. **Claude Dispatch** 是 Anthropic 对企业工作流的直接回应
+2. 与 OpenClaw 相比，更注重「人机协作」而非「AI 替代」
+3. 平台分野：通用型 vs 垂直型 Agent 的不同演进路径
+
+## 详细分析
+
+\`\`\`
+// 架构对比
+Claude Dispatch: 人机协作
+OpenClaw: AI 自主执行
+\`\`\`
+
+## 结论
+
+未来的 AI Agent 将呈现多元化发展趋势。`,
+    date: "3d",
+    author: {
+      name: "Innate Editorial",
+      avatar: "/avatars/admin.jpg",
+      role: "Editor",
+      memberSince: "January 5, 2026",
+    },
+    likes: 28,
+    comments: 12,
+    likedBy: ["/avatars/user1.jpg", "/avatars/user2.jpg", "/avatars/user3.jpg"],
+    tags: ["ai", "news"],
+    category: "news",
+    isFeatured: true,
+    isEditorsPick: true,
+    readTime: 15,
+  },
+  {
+    id: "n2",
+    slug: "attention-residuals-transformer",
+    title: "Attention Residuals：用 Attention 修复 Transformer 深度维度上的信号稀释",
+    summary: "Moonshot AI 的 Kimi Team 发布技术报告，挑战了 Transformer 架构中残差连接的基础组件。提出 Attention Residuals 机制，在 32B 参数模型上验证了效果，并已开源实现代码。",
+    content: `# Attention Residuals：修复 Transformer 信号稀释
+
+Moonshot AI 的 Kimi Team 于 2026 年 3 月 15 日发布技术报告。
+
+## 问题：隐态稀释
+
+标准 PreNorm Transformer 中，每一层把当前层输出加回到之前所有层的累积结果上。
+
+## 创新点
+
+提出 **Attention Residuals** 机制：
+
+\`\`\`python
+# 伪代码
+attention_residual = attention(x) + residual(x)
+\`\`\`
+
+## 实验结果
+
+- 在 32B 参数模型上验证
+- 效果提升明显
+- 已开源代码`,
+    date: "5d",
+    author: {
+      name: "Innate Editorial",
+      avatar: "/avatars/admin.jpg",
+      role: "Editor",
+      memberSince: "January 5, 2026",
+    },
+    likes: 45,
+    comments: 8,
+    likedBy: ["/avatars/user1.jpg", "/avatars/user4.jpg", "/avatars/user5.jpg"],
+    tags: ["ai", "coding"],
+    category: "news",
+    isFeatured: true,
+    isEditorsPick: true,
+    readTime: 12,
+  },
+]
+
+// 兼容旧代码：posts 指向所有内容
+export const posts = [...feedPosts, ...newsPosts]
+
+// 获取所有文章（用于 Feed）
+export const allPosts = [...feedPosts, ...newsPosts].sort((a, b) => {
+  // 简单排序，实际应该按日期
+  return 0
+})
 
 export const courseSections: CourseSection[] = [
   {

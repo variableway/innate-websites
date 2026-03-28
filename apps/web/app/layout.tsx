@@ -1,14 +1,15 @@
 import type { Metadata } from 'next'
 import { Geist, Geist_Mono } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
+import { AppLayout } from '@/components/layout/app-layout'
 import './globals.css'
 
 const _geist = Geist({ subsets: ["latin"] });
 const _geistMono = Geist_Mono({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: 'Superlinear Academy',
-  description: 'AI学习社区平台 - 公开课与行业交流',
+  title: 'Innate',
+  description: 'What drives you, and what you makes, make you.',
   generator: 'v0.app',
   icons: {
     icon: [
@@ -37,7 +38,7 @@ export default function RootLayout({
   return (
     <html lang="zh-CN">
       <body className="font-sans antialiased">
-        {children}
+        <AppLayout>{children}</AppLayout>
         <Analytics />
       </body>
     </html>

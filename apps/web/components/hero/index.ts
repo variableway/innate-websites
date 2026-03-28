@@ -1,0 +1,5 @@
+export { HeroVariantA } from "./hero-variant-a"
+export { HeroVariantB } from "./hero-variant-b"
+export { HeroVariantC } from "./hero-variant-c"
+export { HeroVariantD } from "./hero-variant-d"
+export { HeroSwitcher } from "./hero-switcher"
