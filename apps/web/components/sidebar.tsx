@@ -3,7 +3,7 @@
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { cn } from "@allone/utils"
-import { Home, Newspaper, GraduationCap, Code, FileText } from "lucide-react"
+import { Home, Newspaper, GraduationCap, Code, FileText, BookOpen } from "lucide-react"
 import { InnateLogoIcon } from "./innate-logo"
 
 // Sidebar 职责：内容分类导航（与 LeftBar 互补，不重复）
@@ -37,6 +37,12 @@ const categories = [
     label: "Log",
     icon: FileText,
     href: "/log",
+  },
+  {
+    id: "tutorials",
+    label: "Tutorials",
+    icon: BookOpen,
+    href: "/tutorials",
   },
 ]
 
