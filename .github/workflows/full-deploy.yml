@@ -10,6 +10,7 @@ permissions:
   contents: write
   pages: write
   id-token: write
+  administration: write  # Required to enable Pages site
 
 concurrency:
   group: pages
