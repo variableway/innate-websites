@@ -1,0 +1,36 @@
+{
+  "name": "@innate/ai-task-mcp",
+  "version": "1.0.0",
+  "description": "AI Task Runner - MCP Server",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "bin": {
+    "ai-task-mcp": "./bin/mcp-server.js"
+  },
+  "files": [
+    "dist",
+    "bin"
+  ],
+  "scripts": {
+    "build": "tsup src/server.ts --format cjs --dts",
+    "dev": "tsup src/server.ts --format cjs --dts --watch",
+    "typecheck": "tsc --noEmit"
+  },
+  "keywords": [
+    "ai",
+    "task",
+    "mcp",
+    "model-context-protocol"
+  ],
+  "author": "Innate Team",
+  "license": "MIT",
+  "dependencies": {
+    "@innate/ai-task-core": "workspace:*",
+    "@modelcontextprotocol/sdk": "^0.4.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "tsup": "^8.0.0",
+    "typescript": "^5.3.0"
+  }
+}

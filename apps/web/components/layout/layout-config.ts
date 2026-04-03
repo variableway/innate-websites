@@ -18,73 +18,43 @@ export const pageLayoutConfig: Record<string, PageLayoutConfig> = {
     layout: "complex",
     showLeftBar: true,
     showSidebar: true,
-    showHeader: true,
-    headerVariant: "full",
-    sidebarVariant: "channels",
-  },
-  "/deep-news": {
-    layout: "complex",
-    showLeftBar: true,
-    showSidebar: true,
-    showHeader: true,
-    headerVariant: "full",
-    sidebarVariant: "channels",
-  },
-  "/learning-library": {
-    layout: "complex",
-    showLeftBar: true,
-    showSidebar: true,
-    showHeader: true,
-    headerVariant: "full",
-    sidebarVariant: "course-categories",
-  },
-  "/course": {
-    layout: "complex",
-    showLeftBar: true,
-    showSidebar: true,
-    showHeader: true,
-    headerVariant: "full",
-    sidebarVariant: "course-sections",
-  },
-  "/ai-coding": {
-    layout: "complex",
-    showLeftBar: true,
-    showSidebar: true,
-    showHeader: true,
-    headerVariant: "full",
-    sidebarVariant: "channels",
-  },
-  "/feed": {
-    layout: "complex",
-    showLeftBar: true,
-    showSidebar: true,
-    showHeader: true,
-    headerVariant: "full",
-    sidebarVariant: "channels",
-  },
-  "/log": {
-    layout: "complex",
-    showLeftBar: true,
-    showSidebar: true,
-    showHeader: true,
-    headerVariant: "full",
-    sidebarVariant: "channels",
-  },
-  "/events": {
-    layout: "complex",
-    showLeftBar: true,
-    showSidebar: true,
-    showHeader: true,
+    showHeader: false,
     headerVariant: "full",
     sidebarVariant: "channels",
   },
   
+  // Making module pages
+  "/making": {
+    layout: "complex",
+    showLeftBar: true,
+    showSidebar: true,
+    showHeader: false,
+    headerVariant: "full",
+    sidebarVariant: "channels",
+  },
+  "/making/issues": {
+    layout: "complex",
+    showLeftBar: true,
+    showSidebar: true,
+    showHeader: false,
+    headerVariant: "full",
+    sidebarVariant: "channels",
+  },
+  "/making/weekly": {
+    layout: "complex",
+    showLeftBar: true,
+    showSidebar: true,
+    showHeader: false,
+    headerVariant: "full",
+    sidebarVariant: "channels",
+  },
+
   // Default fallback
   default: {
     layout: "complex",
     showLeftBar: true,
     showSidebar: true,
-    showHeader: true,
+    showHeader: false,
     headerVariant: "full",
     sidebarVariant: "channels",
   },
@@ -97,7 +67,7 @@ export function getLayoutConfig(pathname: string): PageLayoutConfig {
     return pageLayoutConfig[pathname]
   }
   
-  // Check parent routes (for dynamic routes like /course/[id])
+  // Check parent routes (for dynamic routes like /making/weekly/[id])
   for (const [route, config] of Object.entries(pageLayoutConfig)) {
     if (route !== "default" && pathname.startsWith(route + "/")) {
       return config

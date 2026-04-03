@@ -75,20 +75,8 @@
 }
 
 @theme inline {
-  --font-sans: 'Geist', 'Geist Fallback';
-  --font-mono: 'Geist Mono', 'Geist Mono Fallback';
-  
-  /* Innate Brand Colors */
-  --color-innate-primary: #F5E6C8;
-  --color-innate-primary-dark: #E8D4A0;
-  --color-innate-sage: #8FA68E;
-  --color-innate-sage-light: #A8C5A8;
-  --color-innate-slate: #7A9CAE;
-  --color-innate-slate-light: #9BB5C4;
-  --color-innate-terracotta: #D4845E;
-  --color-innate-terracotta-light: #E89B73;
-  --color-innate-cream: #F5F0E6;
-  --color-innate-warm-white: #E8E0D0;
+  --font-sans: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace;
   
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -239,4 +227,311 @@
 
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
+}
+
+/* ========================================
+   Markdown Content Styles
+   ======================================== */
+
+.markdown-content {
+  color: var(--foreground);
+  line-height: 1.75;
+}
+
+/* Headings */
+.markdown-content h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--border);
+  color: var(--foreground);
+  letter-spacing: -0.025em;
+}
+
+.markdown-content h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+  color: var(--foreground);
+  letter-spacing: -0.025em;
+}
+
+.markdown-content h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--foreground);
+}
+
+.markdown-content h4 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-top: 1.25rem;
+  margin-bottom: 0.5rem;
+  color: var(--foreground);
+}
+
+.markdown-content h5,
+.markdown-content h6 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  color: var(--foreground);
+}
+
+/* Paragraphs */
+.markdown-content p {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  line-height: 1.75;
+  color: var(--foreground);
+}
+
+.markdown-content p:first-child {
+  margin-top: 0;
+}
+
+.markdown-content p:last-child {
+  margin-bottom: 0;
+}
+
+/* Links */
+.markdown-content a {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.markdown-content a:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+/* Strong and Emphasis */
+.markdown-content strong {
+  font-weight: 600;
+  color: var(--foreground);
+}
+
+.markdown-content em {
+  font-style: italic;
+  color: var(--foreground);
+}
+
+/* Lists */
+.markdown-content ul,
+.markdown-content ol {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  padding-left: 1.5rem;
+}
+
+.markdown-content ul {
+  list-style-type: disc;
+}
+
+.markdown-content ol {
+  list-style-type: decimal;
+}
+
+.markdown-content li {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  line-height: 1.6;
+}
+
+.markdown-content li > ul,
+.markdown-content li > ol {
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
+}
+
+/* Task lists */
+.markdown-content li input[type="checkbox"] {
+  margin-right: 0.5rem;
+  accent-color: var(--primary);
+  width: 1rem;
+  height: 1rem;
+  vertical-align: middle;
+}
+
+.markdown-content li:has(input[type="checkbox"]) {
+  list-style: none;
+  margin-left: -1.5rem;
+}
+
+/* Inline Code */
+.markdown-content code {
+  font-family: var(--font-mono);
+  font-size: 0.875em;
+  padding: 0.2rem 0.4rem;
+  background-color: var(--muted);
+  border-radius: 0.375rem;
+  color: var(--primary);
+}
+
+/* Code Blocks */
+.markdown-content pre {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background-color: var(--muted);
+  border-radius: 0.75rem;
+  border: 1px solid var(--border);
+  overflow-x: auto;
+}
+
+.markdown-content pre code {
+  background-color: transparent;
+  padding: 0;
+  color: var(--foreground);
+  font-size: 0.875rem;
+  line-height: 1.7;
+}
+
+/* Blockquotes */
+.markdown-content blockquote {
+  margin: 1.5rem 0;
+  padding: 0.75rem 1rem;
+  border-left: 4px solid var(--primary);
+  background-color: var(--muted);
+  border-radius: 0 0.5rem 0.5rem 0;
+  font-style: italic;
+}
+
+.markdown-content blockquote p:first-child {
+  margin-top: 0;
+}
+
+.markdown-content blockquote p:last-child {
+  margin-bottom: 0;
+}
+
+/* Tables */
+.markdown-content table {
+  width: 100%;
+  margin: 1.5rem 0;
+  border-collapse: collapse;
+  border: 1px solid var(--border);
+}
+
+.markdown-content th {
+  background-color: var(--muted);
+  padding: 0.75rem;
+  text-align: left;
+  font-weight: 600;
+  border-bottom: 2px solid var(--border);
+}
+
+.markdown-content td {
+  padding: 0.75rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.markdown-content tr:nth-child(even) {
+  background-color: var(--muted);
+}
+
+/* Horizontal Rule */
+.markdown-content hr {
+  margin: 2rem 0;
+  border: none;
+  border-top: 2px solid var(--border);
+}
+
+/* Images */
+.markdown-content img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 0.75rem;
+  margin: 1.5rem 0;
+}
+
+/* Dark mode adjustments */
+.dark .markdown-content {
+  color: var(--foreground);
+}
+
+.dark .markdown-content h1,
+.dark .markdown-content h2,
+.dark .markdown-content h3,
+.dark .markdown-content h4,
+.dark .markdown-content h5,
+.dark .markdown-content h6,
+.dark .markdown-content strong {
+  color: var(--foreground);
+}
+
+.dark .markdown-content code {
+  background-color: var(--muted);
+  color: var(--primary);
+}
+
+.dark .markdown-content pre {
+  background-color: var(--muted);
+  border-color: var(--border);
+}
+
+.dark .markdown-content blockquote {
+  background-color: var(--muted);
+  border-left-color: var(--primary);
+}
+
+.dark .markdown-content table {
+  border-color: var(--border);
+}
+
+.dark .markdown-content th,
+.dark .markdown-content tr:nth-child(even) {
+  background-color: var(--muted);
+}
+
+/* ========================================
+   Simple Markdown (for inline content)
+   ======================================== */
+
+.markdown-content-simple {
+  color: var(--muted-foreground);
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+
+.markdown-content-simple p {
+  margin: 0.5rem 0;
+}
+
+.markdown-content-simple p:first-child {
+  margin-top: 0;
+}
+
+.markdown-content-simple p:last-child {
+  margin-bottom: 0;
+}
+
+.markdown-content-simple a {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+.markdown-content-simple a:hover {
+  text-decoration: underline;
+}
+
+.markdown-content-simple code {
+  font-family: var(--font-mono);
+  font-size: 0.8em;
+  padding: 0.125rem 0.25rem;
+  background-color: var(--muted);
+  border-radius: 0.25rem;
+}
+
+.markdown-content-simple strong {
+  font-weight: 600;
+  color: var(--foreground);
 }

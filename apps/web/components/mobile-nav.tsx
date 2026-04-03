@@ -3,19 +3,25 @@
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { cn } from "@allone/utils"
-import { Home, BookOpen, Newspaper, Code, FileText } from "lucide-react"
+import { Home, BookOpen, Newspaper, Hammer, FileText } from "lucide-react"
 import { InnateLogoIcon } from "./innate-logo"
 
 const mobileNavItems = [
   {
-    id: "innate",
+    id: "home",
     icon: InnateLogoIcon,
     label: "Home",
     href: "/",
   },
   {
+    id: "making",
+    icon: Hammer,
+    label: "Making",
+    href: "/making",
+  },
+  {
     id: "feed",
-    icon: Home,
+    icon: FileText,
     label: "Feed",
     href: "/feed",
   },
@@ -31,19 +37,13 @@ const mobileNavItems = [
     label: "News",
     href: "/deep-news",
   },
-  {
-    id: "log",
-    icon: FileText,
-    label: "Log",
-    href: "/log",
-  },
 ]
 
 export function MobileNav() {
   const pathname = usePathname()
 
   return (
-    <nav className="fixed bottom-0 left-0 right-0 bg-card border-t border-border z-50 md:hidden">
+    <nav className="fixed bottom-0 left-0 right-0 bg-card border-t border-border z-50 md:hidden safe-area-pb">
       <div className="flex items-center justify-around py-2">
         {mobileNavItems.map((item) => {
           const Icon = item.icon
@@ -54,19 +54,19 @@ export function MobileNav() {
               key={item.id}
               href={item.href}
               className={cn(
-                "flex flex-col items-center gap-1 px-3 py-1 rounded-lg transition-colors",
+                "flex flex-col items-center gap-1 px-2 py-1 rounded-lg transition-colors",
                 isActive
                   ? "text-primary"
                   : "text-muted-foreground"
               )}
             >
               <div className={cn(
-                "w-10 h-10 flex items-center justify-center rounded-full",
+                "w-9 h-9 flex items-center justify-center rounded-full",
                 isActive ? "bg-primary/10" : ""
               )}>
                 <Icon className="h-5 w-5" />
               </div>
-              <span className="text-xs">{item.label}</span>
+              <span className="text-[10px] font-bold">{item.label}</span>
             </Link>
           )
         })}

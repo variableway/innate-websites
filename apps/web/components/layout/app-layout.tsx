@@ -16,7 +16,6 @@ export function AppLayout({ children }: AppLayoutProps) {
   const pathname = usePathname()
   const config = getLayoutConfig(pathname)
   const [isMobile, setIsMobile] = useState(false)
-  const [sidebarOpen, setSidebarOpen] = useState(false)
 
   useEffect(() => {
     const checkMobile = () => {
@@ -58,8 +57,16 @@ export function AppLayout({ children }: AppLayoutProps) {
   // Desktop layout: Complex layout (LeftBar + Sidebar + Header)
   return (
     <div className="min-h-screen bg-background flex">
-      {config.showLeftBar && <LeftBar />}
-      {config.showSidebar && <Sidebar />}
+      {config.showLeftBar && (
+        <div className="border-r border-border">
+          <LeftBar />
+        </div>
+      )}
+      {config.showSidebar && (
+        <div className="border-r border-border">
+          <Sidebar />
+        </div>
+      )}
       <div className="flex-1 flex flex-col min-w-0">
         {config.showHeader && config.headerVariant === "full" && <Header />}
         <main className="flex-1 overflow-y-auto">{children}</main>

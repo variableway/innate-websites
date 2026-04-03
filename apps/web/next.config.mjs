@@ -5,6 +5,10 @@
 // - SERVER_MODE: 服务端模式（启用 ISR）
 const isStaticExport = process.env.STATIC_EXPORT === 'true' || !process.env.SERVER_MODE
 
+// GitHub Pages 配置
+const isGitHubPages = process.env.GITHUB_PAGES === 'true'
+const repoName = process.env.GITHUB_REPOSITORY?.split('/')[1] || 'innate-websites'
+
 const nextConfig = {
   typescript: {
     ignoreBuildErrors: true,
@@ -12,6 +16,12 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
+  
+  // GitHub Pages 配置
+  ...(isGitHubPages && {
+    basePath: `/${repoName}`,
+    assetPrefix: `/${repoName}`,
+  }),
   
   // 静态导出配置
   ...(isStaticExport && {
