@@ -2,15 +2,13 @@ name: Fetch Issues and Deploy to Pages
 
 on:
   schedule:
-    # 每小时运行一次
     - cron: '0 * * * *'
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
   pages: write
   id-token: write
-  administration: write  # Required to enable Pages site
 
 concurrency:
   group: pages
@@ -70,11 +68,6 @@ jobs:
           cd apps/web
           pnpm build:static
 
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
-        with:
-          enablement: true
-
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
@@ -86,9 +79,6 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     needs: fetch-and-build
-    permissions:
-      pages: write
-      id-token: write
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
