@@ -1,4 +1,82 @@
 {
-  "projects": [],
-  "lastUpdated": "2026-04-04T04:14:31.653Z"
+  "projects": [
+    {
+      "id": "innate-next-mono",
+      "name": "innate-next-mono",
+      "description": "A mono repo base project for creating website",
+      "color": "#8FA68E",
+      "repoUrl": "https://github.com/variableway/innate-next-mono"
+    },
+    {
+      "id": "spark-cli",
+      "name": "spark-cli",
+      "description": "Daily Cli command ideas fired by spark",
+      "color": "#8FA68E",
+      "repoUrl": "https://github.com/variableway/spark-cli"
+    },
+    {
+      "id": "keep-them",
+      "name": "keep-them",
+      "description": "keep some videos fron YT or other website and subtitles into local",
+      "color": "#8FA68E",
+      "repoUrl": "https://github.com/variableway/keep-them"
+    },
+    {
+      "id": "feeds-collectors",
+      "name": "feeds-collectors",
+      "description": "collect different feeds",
+      "color": "#8FA68E",
+      "repoUrl": "https://github.com/variableway/feeds-collectors"
+    },
+    {
+      "id": "selfhost-agent",
+      "name": "selfhost-agent",
+      "description": "selfhost instruction and skill repo to setup",
+      "color": "#8FA68E",
+      "repoUrl": "https://github.com/variableway/selfhost-agent"
+    },
+    {
+      "id": "innate-websites",
+      "name": "innate-websites",
+      "description": "personal github repo dashboard for builing in public",
+      "color": "#8FA68E",
+      "repoUrl": "https://github.com/variableway/innate-websites"
+    },
+    {
+      "id": "susu",
+      "name": "susu",
+      "description": "AI education for Susu",
+      "color": "#8FA68E",
+      "repoUrl": "https://github.com/variableway/susu"
+    },
+    {
+      "id": "hyper-it",
+      "name": "hyper-it",
+      "description": "learning hyper ",
+      "color": "#8FA68E",
+      "repoUrl": "https://github.com/variableway/hyper-it"
+    },
+    {
+      "id": "dpp-market-intel",
+      "name": "dpp-market-intel",
+      "description": "dpp data and news",
+      "color": "#8FA68E",
+      "repoUrl": "https://github.com/variableway/dpp-market-intel"
+    },
+    {
+      "id": "capture",
+      "name": "capture",
+      "description": "catpure the ideas,capture the moment,capture the sense",
+      "color": "#8FA68E",
+      "repoUrl": "https://github.com/variableway/capture"
+    },
+    {
+      "id": "spark-skills",
+      "name": "spark-skills",
+      "description": "Personal AI Agent Skills Collection",
+      "color": "#8FA68E",
+      "repoUrl": "https://github.com/variableway/spark-skills"
+    }
+  ],
+  "lastUpdated": "2026-04-04T05:05:30.145Z"
 }

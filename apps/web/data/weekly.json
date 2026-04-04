@@ -10,9 +10,10 @@
         "start": "2026-03-28",
         "end": "2026-04-03"
       },
-      "summary": "This week focused on spark-cli. Completed 5 issues including: 修复 spark task create 命令的 bug; 扩展 spark task 命令：init, create, delete, impl 子命令; 添加 spark script 命令支持执行自定义脚本 and more.",
-      "summaryZh": "本周专注于 spark-cli。完成了 5 个 issues，包括：修复 spark task create 命令的 bug；扩展 spark task 命令：init, create, delete, impl 子命令；添加 spark script 命令支持执行自定义脚本 等。",
+      "summary": "This week focused on spark-cli. Completed 6 issues including: 整合 GitHub Task Workflow 和 spark-task-init 到 spark-skills 仓库; 修复 spark task create 命令的 bug; 扩展 spark task 命令：init, create, delete, impl 子命令 and more.",
+      "summaryZh": "本周专注于 spark-cli。完成了 6 个 issues，包括：整合 GitHub Task Workflow 和 spark-task-init 到 spark-skills 仓库；修复 spark task create 命令的 bug；扩展 spark task 命令：init, create, delete, impl 子命令 等。",
       "completedIssues": [
+        "issue-4199547349",
         "issue-4198752836",
         "issue-4198457360",
         "issue-4198206235",
@@ -103,9 +104,9 @@
           }
         ]
       },
-      "createdAt": "2026-04-03T08:24:09.831Z",
-      "updatedAt": "2026-04-03T08:24:09.831Z"
+      "createdAt": "2026-04-04T05:05:18.514Z",
+      "updatedAt": "2026-04-04T05:05:18.514Z"
     }
   ],
-  "lastUpdated": "2026-04-03T08:24:09.831Z"
+  "lastUpdated": "2026-04-04T05:05:18.514Z"
 }

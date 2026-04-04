@@ -38,7 +38,7 @@
     {
       "id": "innate-websites",
       "name": "innate-websites",
-      "description": "all the innate websites, and tutorials for web creation",
+      "description": "personal github repo dashboard for builing in public",
       "color": "#8FA68E",
       "repoUrl": "https://github.com/variableway/innate-websites"
     },
@@ -240,7 +240,133 @@
       "closedAt": "2026-04-03T03:42:14Z",
       "url": "https://github.com/variableway/spark-cli/issues/1",
       "author": "qdriven"
+    },
+    {
+      "id": "issue-4203206274",
+      "number": 6,
+      "title": "Task 1: mindstorm skill",
+      "description": "# Task 1: mindstorm skill\n\n请帮我创建Mindstorm skill，可以参考superpower的mindstorm skill：\n\n1. 先参考superpowers的mindstorm skill，创建一个mindstorm skill\n2. 然后根据superpowers的mindstorm skill，创建目前这个Task Mindstorm skill 使用之后的结果\n3. skill需要有中文版本，和英文版本，需要说明怎么使用不同的语言版本的skill\n4. 如何评估skill的结果呢，比如中英文的版本\n5. LLM为什么对不同语言会产生不同的结果，请分析写入文档\n\nsuperpowers的skills在目录： [superpowers](../../superpowers), 可以先分析这个整个这个结构\n\n## Task 2: mindstorm skill\n\nmindstorm skill更新：\n1. 名字修改为brainstorm好点呢，还是mindstorm保留也可以\n2. 如果让mindstorm skill 直接输入analysis，planning，prd draft会合理吗，请严格比较目前\nmindstorm skill做的事情，是否输出这三个文档合适？\n\n## Task 3: mindstorm skill - personal product vs biz product\n\nmindstorm skill这个更适合一个：\n1. 个人小项目的决定呢？\n2. 比较大的Biz 项目\n\n如果是个人小项目，也就是就是自己一个人决定，还需要交互式吗？是否可以给个人开始一个AI Agent 项目的mindstorm skill？关注合理性，可行性，是否可以对自己本身有用，这个有用是否可以复制到别人身上，哪些人可以复制，哪些人比较难复制，找到自己的可能客户群体呢？ 请尝试创建一个personal brainstorm skill，看看效果如何。\n",
+      "status": "closed",
+      "project": "spark-skills",
+      "labels": [
+        {
+          "id": "task",
+          "name": "task",
+          "color": "ededed",
+          "description": ""
+        }
+      ],
+      "createdAt": "2026-04-04T03:13:15Z",
+      "updatedAt": "2026-04-04T03:20:52Z",
+      "closedAt": "2026-04-04T03:20:52Z",
+      "url": "https://github.com/variableway/spark-skills/issues/6",
+      "author": "qdriven"
+    },
+    {
+      "id": "issue-4203190856",
+      "number": 5,
+      "title": "Task 1: mindstorm skill",
+      "description": "# Task 1: mindstorm skill\n\n请帮我创建Mindstorm skill，可以参考superpower的mindstorm skill：\n\n1. 先参考superpowers的mindstorm skill，创建一个mindstorm skill\n2. 然后根据superpowers的mindstorm skill，创建目前这个Task Mindstorm skill 使用之后的结果\n3. skill需要有中文版本，和英文版本，需要说明怎么使用不同的语言版本的skill\n4. 如何评估skill的结果呢，比如中英文的版本\n5. LLM为什么对不同语言会产生不同的结果，请分析写入文档\n\nsuperpowers的skills在目录： [superpowers](../../superpowers), 可以先分析这个整个这个结构\n\n## Task 2: mindstorm skill\n\nmindstorm skill更新：\n1. 名字修改为brainstorm好点呢，还是mindstorm保留也可以\n2. 如果让mindstorm skill 直接输入analysis，planning，prd draft会合理吗，请严格比较目前\nmindstorm skill做的事情，是否输出这三个文档合适？\n",
+      "status": "closed",
+      "project": "spark-skills",
+      "labels": [
+        {
+          "id": "task",
+          "name": "task",
+          "color": "ededed",
+          "description": ""
+        }
+      ],
+      "createdAt": "2026-04-04T03:08:20Z",
+      "updatedAt": "2026-04-04T03:09:45Z",
+      "closedAt": "2026-04-04T03:09:45Z",
+      "url": "https://github.com/variableway/spark-skills/issues/5",
+      "author": "qdriven"
+    },
+    {
+      "id": "issue-4203160262",
+      "number": 4,
+      "title": "Task 1: mindstorm skill",
+      "description": "# Task 1: mindstorm skill\n\n请帮我创建Mindstorm skill，可以参考superpower的mindstorm skill：\n\n1. 先参考superpowers的mindstorm skill，创建一个mindstorm skill\n2. 然后根据superpowers的mindstorm skill，创建目前这个Task Mindstorm skill 使用之后的结果\n3. skill需要有中文版本，和英文版本，需要说明怎么使用不同的语言版本的skill\n4. 如何评估skill的结果呢，比如中英文的版本\n5. LLM为什么对不同语言会产生不同的结果，请分析写入文档\n\nsuperpowers的skills在目录： [superpowers](../../superpowers), 可以先分析这个整个这个结构",
+      "status": "closed",
+      "project": "spark-skills",
+      "labels": [
+        {
+          "id": "task",
+          "name": "task",
+          "color": "ededed",
+          "description": ""
+        }
+      ],
+      "createdAt": "2026-04-04T02:58:41Z",
+      "updatedAt": "2026-04-04T03:03:44Z",
+      "closedAt": "2026-04-04T03:03:44Z",
+      "url": "https://github.com/variableway/spark-skills/issues/4",
+      "author": "qdriven"
+    },
+    {
+      "id": "issue-4203121434",
+      "number": 3,
+      "title": "Task 1: setup gitignore",
+      "description": "# Task 1: setup gitignore\n\n请按照当前文件增加.gitignore文件，忽略所有pyc文件\n\n## Task 2: github task workflow 配置到本项目\n\ngithub task workflow 配置到当前目录，目前看起来是没有工作的，需要做到:\n1. 安装到全局环境\n2. 当当前目录可以执行这个workflow，先创建issue，在执行AI任务，最后更新issue\n\n",
+      "status": "closed",
+      "project": "spark-skills",
+      "labels": [
+        {
+          "id": "task",
+          "name": "task",
+          "color": "ededed",
+          "description": ""
+        }
+      ],
+      "createdAt": "2026-04-04T02:47:15Z",
+      "updatedAt": "2026-04-04T02:47:29Z",
+      "closedAt": "2026-04-04T02:47:29Z",
+      "url": "https://github.com/variableway/spark-skills/issues/3",
+      "author": "qdriven"
+    },
+    {
+      "id": "issue-4203080007",
+      "number": 2,
+      "title": "Configure github-task-workflow for spark-skills project",
+      "description": "# Task 1: setup gitignore\n\n请按照当前文件增加.gitignore文件，忽略所有pyc文件\n\n## Task 2: github task workflow 配置到本项目\n\ngithub task workflow 配置到当前目录，目前看起来是没有工作的，需要做到:\n1. 安装到全局环境\n2. 当当前目录可以执行这个workflow，先创建issue，在执行AI任务，最后更新issue",
+      "status": "closed",
+      "project": "spark-skills",
+      "labels": [
+        {
+          "id": "task",
+          "name": "task",
+          "color": "ededed",
+          "description": ""
+        }
+      ],
+      "createdAt": "2026-04-04T02:41:09Z",
+      "updatedAt": "2026-04-04T02:41:29Z",
+      "closedAt": "2026-04-04T02:41:29Z",
+      "url": "https://github.com/variableway/spark-skills/issues/2",
+      "author": "qdriven"
+    },
+    {
+      "id": "issue-4203076701",
+      "number": 1,
+      "title": "Test issue from spark-skills",
+      "description": "Testing github-task-workflow setup",
+      "status": "closed",
+      "project": "spark-skills",
+      "labels": [
+        {
+          "id": "test",
+          "name": "test",
+          "color": "ededed",
+          "description": ""
+        }
+      ],
+      "createdAt": "2026-04-04T02:40:18Z",
+      "updatedAt": "2026-04-04T02:40:26Z",
+      "closedAt": "2026-04-04T02:40:26Z",
+      "url": "https://github.com/variableway/spark-skills/issues/1",
+      "author": "qdriven"
     }
   ],
-  "lastUpdated": "2026-04-03T12:18:39.448Z"
+  "lastUpdated": "2026-04-04T05:05:38.982Z"
 }
