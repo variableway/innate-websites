@@ -2,8 +2,8 @@ name: Fetch GitHub Issues
 
 on:
   schedule:
-    # 每小时运行一次
-    - cron: '0 * * * *'
+    # 每2小时运行一次
+    - cron: '0 */2 * * *'
   workflow_dispatch:
     inputs:
       org:
@@ -22,24 +22,32 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
+          cache: 'pnpm'
 
       - name: Install dependencies
-        run: |
-          cd apps/web
-          npm install
+        run: pnpm install --no-frozen-lockfile
 
       - name: Fetch issues from GitHub
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GITHUB_ORG: ${{ github.event.inputs.org || 'variableway' }}
-        run: node scripts/fetch-issues.js
+        run: |
+          cd apps/web
+          node scripts/fetch-issues.js
 
       - name: Generate weekly summary
-        run: node scripts/generate-weekly.js
+        run: |
+          cd apps/web
+          node scripts/generate-weekly.js
 
       - name: Check for changes
         id: check-changes
@@ -55,6 +63,6 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add apps/web/data/issues.json apps/web/data/sync-state.json
+          git add apps/web/data/
           git commit -m "Update issues data [$(date -u +%Y-%m-%d-%H:%M)]"
           git push
