@@ -80,6 +80,48 @@
   ],
   "issues": [
     {
+      "id": "issue-4246090044",
+      "number": 13,
+      "title": "Support Github Issue creation by title and a folder of documents",
+      "description": "## Task 4: Support Github Issue creation by title and a folder of documents\n\n1. Support create issue with a folder of docs\n2. Every single document is an issue content\n3. The issue title is the document name or the Headline of document, headline of the document is the default option if it is a markdown file\n4. The issue body is the document content",
+      "status": "closed",
+      "project": "spark-cli",
+      "labels": [
+        {
+          "id": "task",
+          "name": "task",
+          "color": "ededed",
+          "description": ""
+        }
+      ],
+      "createdAt": "2026-04-12T00:29:29Z",
+      "updatedAt": "2026-04-12T00:41:47Z",
+      "closedAt": "2026-04-12T00:41:47Z",
+      "url": "https://github.com/variableway/spark-cli/issues/13",
+      "author": "qdriven"
+    },
+    {
+      "id": "issue-4246079464",
+      "number": 12,
+      "title": "Make flush-dns support Windows and add test cases",
+      "description": "## Task: Make flush-dns support Windows and add test cases\n\n- [x] Add a test case for flush-dns\n- [x] Add a test case for flush-dns on Windows\n- [x] Add a test case for flush-dns on macOS\n- [x] Add a test case for flush-dns on Linux\n\n## Implementation Summary\n\n- Extracted `getDNSCommands(osName)` to separate command definitions from execution\n- Added BDD-style tests using Ginkgo/Gomega covering all platforms\n- Commit: 44626f2",
+      "status": "closed",
+      "project": "spark-cli",
+      "labels": [
+        {
+          "id": "task",
+          "name": "task",
+          "color": "ededed",
+          "description": ""
+        }
+      ],
+      "createdAt": "2026-04-12T00:21:25Z",
+      "updatedAt": "2026-04-12T00:22:40Z",
+      "closedAt": "2026-04-12T00:22:40Z",
+      "url": "https://github.com/variableway/spark-cli/issues/12",
+      "author": "qdriven"
+    },
+    {
       "id": "issue-4206259749",
       "number": 11,
       "title": "更新文档 features 和 spec 目录",
@@ -377,6 +419,27 @@
       "author": "qdriven"
     },
     {
+      "id": "issue-4246082358",
+      "number": 14,
+      "title": "Task: Install frontend skills system-wide and update docs",
+      "description": "## Task Description\n\nBased on [frontend skills analysis](../tasks/analysis/frontend-skill-analysis.md), confirm and install both `innate-frontend` (Web) and `tauri-desktop-app` (Desktop) skills at system level for all supported AI agents.\n\n## Checklist\n\n- [x] Confirm both skills are sufficient to start new web and desktop projects\n- [x] Install `innate-frontend` at system level for Claude, Kimi, Codex, OpenCode\n- [x] Install `tauri-desktop-app` at system level for Claude, Kimi, Codex, OpenCode\n- [x] Create `docs/usage/install-frontend-skills.md` with installation instructions\n- [x] Update `docs/index.md` and `docs/README.md` with new doc references\n- [x] Verify installation across all 4 agents\n\n## Implementation Summary\n\n- Both skills confirmed sufficient for starting new web/desktop projects\n- Installed via `./install.sh --system innate-frontend tauri-desktop-app` — symlinks created in all 5 target directories\n- Created comprehensive installation guide at `docs/usage/install-frontend-skills.md`\n- Updated doc indexes to reference the new guide\n\n## Files Modified\n\n| File | Changes |\n|------|---------|\n| `docs/usage/install-frontend-skills.md` | New installation guide for frontend skills |\n| `docs/index.md` | Added link to frontend skills doc |\n| `docs/README.md` | Added link to frontend skills doc |\n| `tasks/features/fontend-skills.md` | Task file (new) |",
+      "status": "closed",
+      "project": "spark-skills",
+      "labels": [
+        {
+          "id": "task",
+          "name": "task",
+          "color": "ededed",
+          "description": ""
+        }
+      ],
+      "createdAt": "2026-04-12T00:23:36Z",
+      "updatedAt": "2026-04-12T00:23:44Z",
+      "closedAt": "2026-04-12T00:23:44Z",
+      "url": "https://github.com/variableway/spark-skills/issues/14",
+      "author": "qdriven"
+    },
+    {
       "id": "issue-4209135963",
       "number": 13,
       "title": "Test: Dual Tracing Verification",
@@ -668,5 +731,5 @@
       "author": "qdriven"
     }
   ],
-  "lastUpdated": "2026-04-11T22:38:04.702Z"
+  "lastUpdated": "2026-04-12T03:21:17.252Z"
 }
