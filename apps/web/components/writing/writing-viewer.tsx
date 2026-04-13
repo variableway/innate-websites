@@ -178,7 +178,7 @@ export function WritingViewer({
 
             {/* Article body */}
             <div
-              className="prose prose-sm dark:prose-invert max-w-none prose-headings:scroll-mt-24 prose-pre:bg-secondary prose-pre:border prose-pre:border-border prose-a:text-[#8FA68E] prose-a:no-underline hover:prose-a:underline"
+              className="markdown-content max-w-none"
               dangerouslySetInnerHTML={{ __html: html }}
             />
           </div>

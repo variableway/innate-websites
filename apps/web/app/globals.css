@@ -238,6 +238,13 @@
   line-height: 1.75;
 }
 
+.markdown-content h1,
+.markdown-content h2,
+.markdown-content h3,
+.markdown-content h4 {
+  scroll-margin-top: 6rem;
+}
+
 /* Headings */
 .markdown-content h1 {
   font-size: 2rem;
