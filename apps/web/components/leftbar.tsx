@@ -7,6 +7,7 @@ import {
   Home,
   Hammer,
   PenLine,
+  Globe,
   Plus,
 } from "lucide-react"
 import { InnateLogoIcon } from "./innate-logo"
@@ -37,6 +38,12 @@ const leftBarItems: LeftBarItem[] = [
     icon: <PenLine className="h-5 w-5" />,
     label: "Writing",
     href: "/writing",
+  },
+  {
+    id: "collections",
+    icon: <Globe className="h-5 w-5" />,
+    label: "Collections",
+    href: "/collections",
   },
 ]
 

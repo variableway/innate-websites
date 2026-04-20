@@ -41,6 +41,16 @@ export const pageLayoutConfig: Record<string, PageLayoutConfig> = {
     sidebarVariant: "channels",
   },
 
+  // Collections module pages
+  "/collections": {
+    layout: "complex",
+    showLeftBar: true,
+    showSidebar: true,
+    showHeader: false,
+    headerVariant: "full",
+    sidebarVariant: "channels",
+  },
+
   // Writing module pages
   "/writing": {
     layout: "complex",
