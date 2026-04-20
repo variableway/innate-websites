@@ -1,9 +1,10 @@
 "use client"
 
+import { useState } from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { cn } from "@allone/utils"
-import { CheckSquare, Calendar, Hammer, FolderGit2, Lightbulb, PenLine } from "lucide-react"
+import { CheckSquare, Calendar, Hammer, FolderGit2, Lightbulb, PenLine, Rss, ChevronRight } from "lucide-react"
 import { InnateLogoIcon } from "./innate-logo"
 
 // Writing category
@@ -50,6 +51,7 @@ const makingCategory = {
 
 export function Sidebar() {
   const pathname = usePathname()
+  const [rssOpen, setRssOpen] = useState(false)
 
   return (
     <aside className="w-56 bg-card flex flex-col self-stretch">
@@ -128,6 +130,39 @@ export function Sidebar() {
             <span>{writingCategory.label}</span>
           </Link>
         </nav>
+      </div>
+
+      {/* RSS Feeds */}
+      <div className="p-3 mt-auto">
+        <div className="mx-1 h-px bg-border mb-3" />
+        <button
+          onClick={() => setRssOpen(!rssOpen)}
+          className="flex items-center gap-2 px-3 py-1.5 rounded-lg text-sm text-muted-foreground hover:bg-secondary hover:text-foreground transition-colors w-full"
+        >
+          <Rss className="h-3.5 w-3.5" />
+          <span className="flex-1 text-left">RSS Feeds</span>
+          <ChevronRight className={cn("h-3 w-3 transition-transform", rssOpen && "rotate-90")} />
+        </button>
+        {rssOpen && (
+          <nav className="flex flex-col gap-1 mt-1">
+            <Link
+              href="/feed/rss.xml"
+              target="_blank"
+              className="flex items-center gap-2 px-3 py-1.5 rounded-lg text-sm text-muted-foreground hover:bg-secondary hover:text-foreground transition-colors"
+            >
+              <Rss className="h-3 w-3 text-orange-500" />
+              <span>Writing</span>
+            </Link>
+            <Link
+              href="/making/issues/rss.xml"
+              target="_blank"
+              className="flex items-center gap-2 px-3 py-1.5 rounded-lg text-sm text-muted-foreground hover:bg-secondary hover:text-foreground transition-colors"
+            >
+              <Rss className="h-3 w-3 text-orange-500" />
+              <span>Issues</span>
+            </Link>
+          </nav>
+        )}
       </div>
     </aside>
   )

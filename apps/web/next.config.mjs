@@ -3,7 +3,7 @@
 // 通过环境变量控制构建模式
 // - STATIC_EXPORT: 静态导出模式（默认）
 // - SERVER_MODE: 服务端模式（启用 ISR）
-const isStaticExport = process.env.STATIC_EXPORT === 'true' || !process.env.SERVER_MODE
+const isStaticExport = (process.env.STATIC_EXPORT === 'true' || !process.env.SERVER_MODE) && process.env.NODE_ENV !== 'development'
 
 // GitHub Pages 配置
 const isGitHubPages = process.env.GITHUB_PAGES === 'true'
