@@ -23,7 +23,9 @@ import {
   cn
 } from "@innate/ui"
 import { getProjectById, projectAnalyses } from "@/lib/making/data"
+import { extractToc } from "@/lib/content/parser"
 import { ServerMarkdown } from "@/components/server-markdown"
+import { TableOfContents } from "@/components/table-of-contents"
 
 interface PageProps {
   params: Promise<{ id: string }>
@@ -43,6 +45,8 @@ export default async function ProjectDetailPage({ params }: PageProps) {
   if (!project) {
     notFound()
   }
+
+  const toc = extractToc(project.rawContent || '')
 
   return (
     <div className="h-full flex">
@@ -112,7 +116,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
 
       {/* Right: Content */}
       <div className="flex-1 overflow-y-auto bg-background">
-        <div className="max-w-4xl mx-auto p-6">
+        <div className="max-w-5xl mx-auto p-6">
           {/* Header */}
           <div className="mb-8 pb-6 border-b border-border">
             <div className="flex items-start justify-between">
@@ -137,7 +141,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
                 )}
               </div>
               {project.repoUrl && (
-                <a 
+                <a
                   href={project.repoUrl}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -186,7 +190,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
                     </div>
                   </CardHeader>
                   <CardContent className="pt-0">
-                    {project.strengths.length > 0 ? (
+                    {project.strengths && project.strengths.length > 0 ? (
                       <ul className="space-y-2">
                         {project.strengths.map((item, idx) => (
                           <li key={idx} className="flex items-start gap-2 text-sm text-muted-foreground">
@@ -212,7 +216,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
                     </div>
                   </CardHeader>
                   <CardContent className="pt-0">
-                    {project.weaknesses.length > 0 ? (
+                    {project.weaknesses && project.weaknesses.length > 0 ? (
                       <ul className="space-y-2">
                         {project.weaknesses.map((item, idx) => (
                           <li key={idx} className="flex items-start gap-2 text-sm text-muted-foreground">
@@ -238,7 +242,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
                     </div>
                   </CardHeader>
                   <CardContent className="pt-0">
-                    {project.features.length > 0 ? (
+                    {project.features && project.features.length > 0 ? (
                       <ul className="space-y-2">
                         {project.features.map((item, idx) => (
                           <li key={idx} className="flex items-start gap-2 text-sm text-muted-foreground">
@@ -260,9 +264,14 @@ export default async function ProjectDetailPage({ params }: PageProps) {
 
           {/* AGENTS.md Content - Direct Markdown Rendering */}
           {project.rawContent && (
-            <section>
-              <ServerMarkdown content={project.rawContent} />
-            </section>
+            <div className="grid grid-cols-1 lg:grid-cols-[1fr_200px] gap-8">
+              <section>
+                <ServerMarkdown content={project.rawContent} />
+              </section>
+              <aside>
+                <TableOfContents headings={toc} />
+              </aside>
+            </div>
           )}
 
           {!project.hasAgents && (

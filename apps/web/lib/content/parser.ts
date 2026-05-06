@@ -105,22 +105,30 @@ export function extractPlainText(html: string, maxLength: number = 200): string 
  */
 export function extractToc(content: string): Array<{ level: number; text: string; id: string }> {
   const headings: Array<{ level: number; text: string; id: string }> = []
+  const seenIds = new Map<string, number>()
   const lines = content.split('\n')
-  
+
   for (const line of lines) {
     const match = line.match(/^(#{2,3})\s+(.+)$/)
     if (match) {
       const level = match[1].length
       const text = match[2].trim()
-      const id = text
+      let id = text
         .toLowerCase()
         .replace(/[^\w\s-]/g, '')
         .replace(/\s+/g, '-')
-      
+
+      // Handle duplicates like github-slugger
+      const seenCount = seenIds.get(id) || 0
+      seenIds.set(id, seenCount + 1)
+      if (seenCount > 0) {
+        id = `${id}-${seenCount}`
+      }
+
       headings.push({ level, text, id })
     }
   }
-  
+
   return headings
 }
 

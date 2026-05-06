@@ -5,12 +5,14 @@ import { Cheatsheet } from "@/lib/cheatsheets/types"
 import { Badge } from "@innate/ui"
 import { ArrowLeft, BookOpen, Calendar, Tag } from "lucide-react"
 import { ServerMarkdown } from "@/components/server-markdown"
+import { TableOfContents, type TocItem } from "@/components/table-of-contents"
 
 interface Props {
   cheatsheet: Cheatsheet
+  toc: TocItem[]
 }
 
-export function CheatsheetDetailClient({ cheatsheet }: Props) {
+export function CheatsheetDetailClient({ cheatsheet, toc }: Props) {
   return (
     <div className="flex flex-col h-full">
       {/* Header */}
@@ -57,9 +59,14 @@ export function CheatsheetDetailClient({ cheatsheet }: Props) {
 
       {/* Content */}
       <div className="flex-1 overflow-y-auto">
-        <div className="max-w-4xl mx-auto px-6 py-6">
-          <div className="prose prose-sm dark:prose-invert max-w-none">
-            <ServerMarkdown content={cheatsheet.content} />
+        <div className="max-w-5xl mx-auto px-6 py-6">
+          <div className="grid grid-cols-1 lg:grid-cols-[1fr_200px] gap-8">
+            <div className="prose prose-sm dark:prose-invert max-w-none">
+              <ServerMarkdown content={cheatsheet.content} />
+            </div>
+            <aside>
+              <TableOfContents headings={toc} />
+            </aside>
           </div>
         </div>
       </div>

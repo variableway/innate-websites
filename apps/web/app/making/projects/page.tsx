@@ -102,7 +102,7 @@ function ProjectCard({ project }: { project: typeof projectAnalyses[0] }) {
         </p>
 
         {/* Features */}
-        {project.features.length > 0 && (
+        {project.features && project.features.length > 0 && (
           <div className="flex flex-wrap gap-1">
             {project.features.slice(0, 3).map((feature, idx) => (
               <Badge key={idx} variant="secondary" className="text-xs">
@@ -122,10 +122,10 @@ function ProjectCard({ project }: { project: typeof projectAnalyses[0] }) {
           <div className="flex items-center gap-1.5">
             <Star className="h-3.5 w-3.5 text-yellow-500" />
             <span className="text-xs text-muted-foreground">
-              {project.strengths.length} 优势
+              {project.strengths?.length || 0} 优势
             </span>
           </div>
-          {project.weaknesses.length > 0 && (
+          {project.weaknesses && project.weaknesses.length > 0 && (
             <div className="flex items-center gap-1.5">
               <AlertTriangle className="h-3.5 w-3.5 text-orange-500" />
               <span className="text-xs text-muted-foreground">

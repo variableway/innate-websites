@@ -1,8 +1,7 @@
 import { Metadata } from "next"
 import { notFound } from "next/navigation"
-import Link from "next/link"
-import { ArrowLeft } from "lucide-react"
 import { getAllCheatsheets, getCheatsheetBySlug } from "@/lib/cheatsheets/data"
+import { extractToc } from "@/lib/content/parser"
 import { CheatsheetDetailClient } from "@/components/cheatsheets/cheatsheet-detail-client"
 
 interface Props {
@@ -33,5 +32,7 @@ export default async function CheatsheetDetailPage({ params }: Props) {
     notFound()
   }
 
-  return <CheatsheetDetailClient cheatsheet={cheatsheet} />
+  const toc = extractToc(cheatsheet.content)
+
+  return <CheatsheetDetailClient cheatsheet={cheatsheet} toc={toc} />
 }

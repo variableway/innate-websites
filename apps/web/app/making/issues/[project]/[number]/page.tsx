@@ -20,14 +20,16 @@ import {
   Button,
   cn
 } from "@innate/ui"
-import { 
-  issues, 
-  projects, 
-  weeklySummaries, 
+import {
+  issues,
+  projects,
+  weeklySummaries,
   getIssuesByProject,
   getIssueByNumber
 } from "@/lib/making/data"
+import { extractToc } from "@/lib/content/parser"
 import { ServerMarkdown } from "@/components/server-markdown"
+import { TableOfContents } from "@/components/table-of-contents"
 import { ProjectSwitcher } from "./project-switcher"
 
 // Generate static params for all issues
@@ -62,6 +64,8 @@ export default async function IssueDetailPage({ params }: PageProps) {
   const relatedIssues = getIssuesByProject(projectId)
     .filter(i => i.id !== issue.id)
     .slice(0, 5)
+
+  const toc = extractToc(issue.description || '')
 
   return (
     <div className="h-full flex">
@@ -124,7 +128,7 @@ export default async function IssueDetailPage({ params }: PageProps) {
 
       {/* Right: Content */}
       <div className="flex-1 overflow-y-auto">
-        <div className="max-w-3xl mx-auto p-6">
+        <div className="max-w-4xl mx-auto p-6">
           {/* Header */}
           <div className="mb-6">
             <div className="flex items-center gap-2 mb-3">
@@ -143,9 +147,9 @@ export default async function IssueDetailPage({ params }: PageProps) {
                 {project?.name || projectId} #{issue.number}
               </span>
             </div>
-            
+
             <h1 className="text-xl font-semibold mb-4">{issue.title}</h1>
-            
+
             {/* Meta Info */}
             <div className="flex flex-wrap items-center gap-4 text-sm text-muted-foreground">
               <div className="flex items-center gap-1.5">
@@ -174,11 +178,11 @@ export default async function IssueDetailPage({ params }: PageProps) {
               </div>
               <div className="flex flex-wrap gap-2">
                 {issue.labels.map(label => (
-                  <Badge 
+                  <Badge
                     key={label.id}
                     variant="secondary"
                     className="text-xs"
-                    style={{ 
+                    style={{
                       backgroundColor: `${label.color}20`,
                       color: label.color,
                       borderColor: `${label.color}40`,
@@ -191,14 +195,19 @@ export default async function IssueDetailPage({ params }: PageProps) {
             </div>
           )}
 
-          {/* Issue Content - Direct Markdown Rendering */}
-          <section className="mb-8">
-            {issue.description ? (
-              <ServerMarkdown content={issue.description} />
-            ) : (
-              <p className="text-muted-foreground italic">No description provided</p>
-            )}
-          </section>
+          {/* Issue Content with ToC */}
+          <div className="grid grid-cols-1 lg:grid-cols-[1fr_200px] gap-8 mb-8">
+            <section>
+              {issue.description ? (
+                <ServerMarkdown content={issue.description} />
+              ) : (
+                <p className="text-muted-foreground italic">No description provided</p>
+              )}
+            </section>
+            <aside>
+              <TableOfContents headings={toc} />
+            </aside>
+          </div>
 
           {/* Related Weekly Summaries */}
           {relatedWeeklies.length > 0 && (

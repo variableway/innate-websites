@@ -5,8 +5,10 @@ import Link from "next/link"
 import { Button } from "@allone/ui"
 import { ArrowLeft, Heart, MessageCircle, Bookmark, Share2 } from "lucide-react"
 import { MarkdownPreview } from "@/components/markdown-preview"
+import { TableOfContents } from "@/components/table-of-contents"
 import { tags } from "@/lib/data"
 import type { PostMeta } from "@/lib/content"
+import type { TocItem } from "@/components/table-of-contents"
 
 interface Author {
   name: string
@@ -30,7 +32,7 @@ interface ArticleReaderProps {
     category: string
     tags: string[]
     readTime: number
-    toc: Array<{ id: string; text: string; level: number }>
+    toc: TocItem[]
   }
   relatedPosts?: RelatedPost[]
 }
@@ -57,37 +59,6 @@ function ReadingProgress() {
         className="h-full bg-[#8FA68E] transition-all duration-150"
         style={{ width: `${progress}%` }}
       />
-    </div>
-  )
-}
-
-// 目录组件
-function TableOfContents({ headings }: { headings: { level: number; text: string; id: string }[] }) {
-  if (headings.length === 0) return null
-
-  return (
-    <div className="hidden lg:block sticky top-24 h-fit">
-      <h3 className="text-sm font-semibold mb-4 text-muted-foreground">Table of Contents</h3>
-      <nav className="space-y-2">
-        {headings.map((heading, index) => (
-          <a
-            key={index}
-            href={`#${heading.id}`}
-            className={`block text-sm hover:text-[#8FA68E] transition-colors ${
-              heading.level === 3 ? "ml-4 text-muted-foreground" : "text-foreground"
-            }`}
-            onClick={(e) => {
-              e.preventDefault()
-              const element = document.getElementById(heading.id)
-              if (element) {
-                element.scrollIntoView({ behavior: "smooth" })
-              }
-            }}
-          >
-            {heading.text}
-          </a>
-        ))}
-      </nav>
     </div>
   )
 }

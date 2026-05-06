@@ -2,7 +2,8 @@ import { notFound } from "next/navigation"
 import { getTutorialBySlug, getAllTutorials } from "@/lib/tutorials-server"
 import { getDifficultyLabel, getDifficultyColor } from "@/lib/tutorials"
 import { TutorialContent } from "@/components/tutorials/tutorial-content"
-import { TutorialSidebar } from "@/components/tutorials/tutorial-sidebar"
+import { TableOfContents } from "@/components/table-of-contents"
+import { extractToc } from "@/lib/content/parser"
 import { ArrowLeft, Clock, Wrench } from "lucide-react"
 import Link from "next/link"
 import { cn } from "@allone/utils"
@@ -30,10 +31,12 @@ export async function generateMetadata({ params }: Props) {
 export default async function TutorialPage({ params }: Props) {
   const { slug } = await params
   const tutorial = await getTutorialBySlug(slug)
-  
+
   if (!tutorial) {
     notFound()
   }
+
+  const toc = extractToc(tutorial.content)
 
   return (
     <div className="min-h-full bg-background flex">
@@ -53,38 +56,47 @@ export default async function TutorialPage({ params }: Props) {
         </div>
 
         {/* Article */}
-        <article className="max-w-4xl mx-auto px-4 py-8">
-          {/* Meta */}
-          <div className="mb-8">
-            <div className="flex flex-wrap items-center gap-3 mb-4">
-              <span className={cn(
-                "px-3 py-1 rounded-full text-sm font-medium",
-                getDifficultyColor(tutorial.difficulty)
-              )}>
-                {getDifficultyLabel(tutorial.difficulty)}
-              </span>
-              <span className="flex items-center gap-1.5 text-sm text-muted-foreground">
-                <Clock className="w-4 h-4" />
-                {tutorial.time}
-              </span>
-              {tutorial.tool && (
-                <span className="flex items-center gap-1.5 text-sm text-muted-foreground">
-                  <Wrench className="w-4 h-4" />
-                  {tutorial.tool}
-                </span>
-              )}
-            </div>
-            
-            <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              {tutorial.title}
-            </h1>
-            <p className="text-lg text-muted-foreground">
-              {tutorial.description}
-            </p>
-          </div>
+        <article className="max-w-5xl mx-auto px-4 py-8">
+          <div className="grid grid-cols-1 xl:grid-cols-[1fr_200px] gap-8">
+            <div>
+              {/* Meta */}
+              <div className="mb-8">
+                <div className="flex flex-wrap items-center gap-3 mb-4">
+                  <span className={cn(
+                    "px-3 py-1 rounded-full text-sm font-medium",
+                    getDifficultyColor(tutorial.difficulty)
+                  )}>
+                    {getDifficultyLabel(tutorial.difficulty)}
+                  </span>
+                  <span className="flex items-center gap-1.5 text-sm text-muted-foreground">
+                    <Clock className="w-4 h-4" />
+                    {tutorial.time}
+                  </span>
+                  {tutorial.tool && (
+                    <span className="flex items-center gap-1.5 text-sm text-muted-foreground">
+                      <Wrench className="w-4 h-4" />
+                      {tutorial.tool}
+                    </span>
+                  )}
+                </div>
 
-          {/* Content */}
-          <TutorialContent content={tutorial.content} />
+                <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+                  {tutorial.title}
+                </h1>
+                <p className="text-lg text-muted-foreground">
+                  {tutorial.description}
+                </p>
+              </div>
+
+              {/* Content */}
+              <TutorialContent content={tutorial.content} />
+            </div>
+
+            {/* Sidebar - Table of Contents */}
+            <aside className="hidden xl:block">
+              <TableOfContents headings={toc} />
+            </aside>
+          </div>
         </article>
 
         {/* Footer */}
@@ -96,9 +108,6 @@ export default async function TutorialPage({ params }: Props) {
           </div>
         </div>
       </div>
-
-      {/* Sidebar - Table of Contents */}
-      <TutorialSidebar content={tutorial.content} />
     </div>
   )
 }
