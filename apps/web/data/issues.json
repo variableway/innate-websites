@@ -1000,6 +1000,48 @@
       "author": "qdriven"
     },
     {
+      "id": "issue-4405632876",
+      "number": 47,
+      "title": "Skill Feeds 网站所需 Skill 清单与推荐",
+      "description": "Task 2: 给出如果需要实现一个skill feeds的网站需要哪些skill\n\n1. 给出如果需要实现一个skill feeds的网站需要哪些skill\n2. 列出一个skill清单，同时每个同类型的skill给出Top 5 Skill 推荐",
+      "status": "closed",
+      "project": "fire-skills",
+      "labels": [
+        {
+          "id": "task",
+          "name": "task",
+          "color": "ededed",
+          "description": ""
+        }
+      ],
+      "createdAt": "2026-05-08T10:18:53Z",
+      "updatedAt": "2026-05-08T10:30:01Z",
+      "closedAt": "2026-05-08T10:30:01Z",
+      "url": "https://github.com/variableway/fire-skills/issues/47",
+      "author": "qdriven"
+    },
+    {
+      "id": "issue-4405483824",
+      "number": 46,
+      "title": "深度调研Skill Composition",
+      "description": "Task 1: 深度调研Skill Composition\n\n1. 研究Skill Composition的原理\n2. 分析Skill Composition的优缺点\n3. 探索Skill Composition的实现方式\n4. 使用Use Case方式来说明如何进行比如通用skill和专用skill在项目中怎么组织是合理\n5. 如何用可视化的角度来做Skill Composition/Workflow",
+      "status": "closed",
+      "project": "fire-skills",
+      "labels": [
+        {
+          "id": "task",
+          "name": "task",
+          "color": "ededed",
+          "description": ""
+        }
+      ],
+      "createdAt": "2026-05-08T09:54:15Z",
+      "updatedAt": "2026-05-08T10:05:11Z",
+      "closedAt": "2026-05-08T10:05:11Z",
+      "url": "https://github.com/variableway/fire-skills/issues/46",
+      "author": "qdriven"
+    },
+    {
       "id": "issue-4404122426",
       "number": 45,
       "title": "Personal SKILL Workflow: Evolving AI Usage Path for Coders",
@@ -2014,5 +2056,5 @@
       "author": "qdriven"
     }
   ],
-  "lastUpdated": "2026-05-08T09:44:37.198Z"
+  "lastUpdated": "2026-05-08T11:22:55.656Z"
 }
