@@ -1979,6 +1979,48 @@
       "author": "qdriven"
     },
     {
+      "id": "issue-4410824223",
+      "number": 7,
+      "title": "Redo Task 3: Parent-folder ecosystem evaluation",
+      "description": "Redo Task 3 by scanning the parent folder /Users/patrick/workspace/variableway/innate, evaluating all visible projects and files at a practical repository level, then update planning/overview/codex/ with a more detailed project-position, capture-to-outcome, architecture, roadmap, and UI-base evaluation. Preserve the prior Task 3 conclusion but ground it in the wider innate ecosystem.",
+      "status": "closed",
+      "project": "innate-way",
+      "labels": [
+        {
+          "id": "task",
+          "name": "task",
+          "color": "5319E7",
+          "description": ""
+        }
+      ],
+      "createdAt": "2026-05-09T03:01:59Z",
+      "updatedAt": "2026-05-09T03:09:14Z",
+      "closedAt": "2026-05-09T03:09:14Z",
+      "url": "https://github.com/variableway/innate-way/issues/7",
+      "author": "qdriven"
+    },
+    {
+      "id": "issue-4410788350",
+      "number": 6,
+      "title": "Project Position - Define innate-way as Central Hub",
+      "description": "## Task 3: Project Position\n\nDefine innate-way as the central hub for personal projects with these core purposes:\n\n1. **Idea Entry Point** - All ideas enter via CLI Application, Chat Groups, Openclaw dialogs\n2. **Idea Routing** - After collection, route ideas to different workflows using different Skills\n3. **Idea Confirmation** - Confirm which ideas should enter development/creation process\n4. **Task Distribution** - Assign tasks to remote machines/Services or private cloud\n5. **Progress Tracking** - Query and report progress via bots and applications\n6. **Visual Dashboard** - Visual progress and output display\n7. **Personal KM** - Knowledge management for training private assistants like Openclaw\n\n### Deliverables\n- Create a comprehensive project positioning document in planning/overview/\n- Define architecture and component relationships\n- Outline integration points with existing projects under innate/",
+      "status": "closed",
+      "project": "innate-way",
+      "labels": [
+        {
+          "id": "task",
+          "name": "task",
+          "color": "5319E7",
+          "description": ""
+        }
+      ],
+      "createdAt": "2026-05-09T02:51:56Z",
+      "updatedAt": "2026-05-09T02:56:39Z",
+      "closedAt": "2026-05-09T02:55:35Z",
+      "url": "https://github.com/variableway/innate-way/issues/6",
+      "author": "qdriven"
+    },
+    {
       "id": "issue-4235611903",
       "number": 5,
       "title": "Test TUI-GO: Category and TODO Operations",
@@ -2056,5 +2098,5 @@
       "author": "qdriven"
     }
   ],
-  "lastUpdated": "2026-05-08T23:00:32.474Z"
+  "lastUpdated": "2026-05-09T03:32:56.870Z"
 }
