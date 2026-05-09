@@ -78,11 +78,11 @@
       "repoUrl": "https://github.com/variableway/innate-way"
     },
     {
-      "id": "my-tokscale",
-      "name": "my-tokscale",
+      "id": "cm-tokscale",
+      "name": "cm-tokscale",
       "description": "my tokscale for model by data, copy and modify",
       "color": "#8FA68E",
-      "repoUrl": "https://github.com/variableway/my-tokscale"
+      "repoUrl": "https://github.com/variableway/cm-tokscale"
     },
     {
       "id": "innate-feeds-filters",
@@ -113,5 +113,5 @@
       "repoUrl": "https://github.com/variableway/innate-ai-art"
     }
   ],
-  "lastUpdated": "2026-05-09T09:24:23.739Z"
+  "lastUpdated": "2026-05-09T11:01:03.274Z"
 }

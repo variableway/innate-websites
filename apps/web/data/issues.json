@@ -78,11 +78,11 @@
       "repoUrl": "https://github.com/variableway/innate-way"
     },
     {
-      "id": "my-tokscale",
-      "name": "my-tokscale",
+      "id": "cm-tokscale",
+      "name": "cm-tokscale",
       "description": "my tokscale for model by data, copy and modify",
       "color": "#8FA68E",
-      "repoUrl": "https://github.com/variableway/my-tokscale"
+      "repoUrl": "https://github.com/variableway/cm-tokscale"
     },
     {
       "id": "innate-feeds-filters",
@@ -2119,5 +2119,5 @@
       "author": "qdriven"
     }
   ],
-  "lastUpdated": "2026-05-09T09:24:33.829Z"
+  "lastUpdated": "2026-05-09T11:01:13.916Z"
 }

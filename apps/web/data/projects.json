@@ -134,10 +134,10 @@
       "rawContent": "# Innate Way — Project Map\n\nThis monorepo contains four projects, each serving a distinct purpose in the **personal AI assistant** ecosystem.\n\n## Projects\n\n### 1. `capture/` — Ideas Capture CLI (Python)\n\nTerminal-based capture tool for quickly recording ideas, tasks, and notes. Organizes entries with categories, tags, and metadata. Supports AI-powered content analysis and auto-categorization.\n\n- **Stack**: Python, Typer/Click CLI, Rich TUI, pytest\n- **Role**: CLI input layer — the fastest way to capture thoughts from terminal\n- **Status**: Functional\n\n### 2. `capture-tui-go/` — Ideas Capture CLI (Go)\n\nGo rewrite of the capture tool. Same core features — add ideas, manage categories, analyze content, export to CSV/JSON/Markdown. Includes session management for tracking AI conversations.\n\n- **Stack**: Go, Cobra CLI, YAML storage, Ginkgo testing\n- **Role**: Performance-oriented CLI alternative to the Python version\n- **Status**: In development\n\n### 3. `innate/` — AI Assistant Desktop + Web App\n\nFull-featured AI assistant with desktop app (Tauri v2) and web app (Next.js). Monorepo with shared packages for UI, business logic, and views.\n\n- **Stack**: Tauri v2 + Next.js 16 + React 19 + Rust + Vite + shadcn/ui + Tailwind v4\n- **Packages**: `@innate/ui` (components), `@innate/core` (logic + Platform Bridge), `@innate/views` (shared pages)\n- **Features**: Ideas inbox, task kanban, agent runtime, memory system, MCP tools, terminal, skills, Feishu integration\n- **Role**: The main application — desktop + web frontend for the entire system\n- **Status**: Scaffold complete, building features\n\n### 4. `client/` — Innate Capture Desktop App\n\nCross-platform capture application (Tauri + Next.js) focused on note-taking and category management. Desktop-first with web support.\n\n- **Stack**: Tauri 2.x + Next.js 16 + React 19 + shadcn/ui + TypeScript\n- **Role**: Lightweight capture-focused desktop client\n- **Status**: Functional\n\n## Architecture Overview\n\n```\nUser Input\n    │\n    ├── Terminal ──▶ capture/ (Python) or capture-tui-go/ (Go)\n    │                      │\n    │                      ▼\n    ├── Desktop ───▶ client/ (Capture-only) or innate/ (Full AI Assistant)\n    │                      │\n    └── Browser ───▶ innate/ (Web version)\n                           │\n                           ├── Ideas → Tasks → Agent Execution\n                           ├── Memory (cross-session persistence)\n                           └── MCP Tools (Feishu, filesystem, etc.)\n```\n\n## Target Users\n\nIndividuals and small teams (≤10 people).\n"
     },
     {
-      "id": "my-tokscale",
-      "name": "my-tokscale",
+      "id": "cm-tokscale",
+      "name": "cm-tokscale",
       "description": "my tokscale for model by data, copy and modify",
-      "repoUrl": "https://github.com/variableway/my-tokscale",
+      "repoUrl": "https://github.com/variableway/cm-tokscale",
       "hasAgents": false,
       "summary": "my tokscale for model by data, copy and modify",
       "features": [],
@@ -191,5 +191,5 @@
       "weaknesses": []
     }
   ],
-  "lastUpdated": "2026-05-09T09:24:28.166Z"
+  "lastUpdated": "2026-05-09T11:01:08.079Z"
 }
