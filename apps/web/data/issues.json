@@ -1979,6 +1979,27 @@
       "author": "qdriven"
     },
     {
+      "id": "issue-4411870514",
+      "number": 8,
+      "title": "Implement Skill Feed Manager MVP",
+      "description": "Create a new desktop/web MVP project for Skill Feed Manager. MVP scope: local-first scan of ../fire-skills, parse SKILL.md metadata, validate frontmatter and repository health, detect agent target directories, render dashboard/library/matrix/validation/collections UI, export a report, and run build/validation checks. No install/remove write actions in the first MVP.",
+      "status": "closed",
+      "project": "innate-way",
+      "labels": [
+        {
+          "id": "task",
+          "name": "task",
+          "color": "5319E7",
+          "description": ""
+        }
+      ],
+      "createdAt": "2026-05-09T08:36:35Z",
+      "updatedAt": "2026-05-09T08:58:01Z",
+      "closedAt": "2026-05-09T08:58:01Z",
+      "url": "https://github.com/variableway/innate-way/issues/8",
+      "author": "qdriven"
+    },
+    {
       "id": "issue-4410824223",
       "number": 7,
       "title": "Redo Task 3: Parent-folder ecosystem evaluation",
@@ -2098,5 +2119,5 @@
       "author": "qdriven"
     }
   ],
-  "lastUpdated": "2026-05-09T06:21:05.598Z"
+  "lastUpdated": "2026-05-09T09:24:33.829Z"
 }
