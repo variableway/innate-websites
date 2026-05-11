@@ -115,6 +115,27 @@
   ],
   "issues": [
     {
+      "id": "issue-4419464709",
+      "number": 12,
+      "title": "完成组件展示功能 - Sidebar + Main Content 布局",
+      "description": "按照 Layout 方式完成总体页面布局：\n1. Sidebar + Main Content 布局框架\n2. 组件分类注册机制（category -> components）\n3. Main Content 区域展示选中组件\n4. 添加第一个示例组件（从 21st.dev 复制 Hero 区块，适配 Base UI）验证流程\n5. 可通过 AI 手动添加更多组件\n\n参考文件: tasks/product/overview.md",
+      "status": "closed",
+      "project": "innate-next-mono",
+      "labels": [
+        {
+          "id": "task",
+          "name": "task",
+          "color": "ededed",
+          "description": ""
+        }
+      ],
+      "createdAt": "2026-05-11T09:02:03Z",
+      "updatedAt": "2026-05-11T09:11:56Z",
+      "closedAt": "2026-05-11T09:11:56Z",
+      "url": "https://github.com/variableway/innate-next-mono/issues/12",
+      "author": "qdriven"
+    },
+    {
       "id": "issue-4321100418",
       "number": 11,
       "title": "修复 UI 问题 + 主题风格切换",
@@ -2119,5 +2140,5 @@
       "author": "qdriven"
     }
   ],
-  "lastUpdated": "2026-05-11T07:51:55.450Z"
+  "lastUpdated": "2026-05-11T11:29:53.871Z"
 }
