@@ -71,13 +71,6 @@
       "repoUrl": "https://github.com/variableway/fire-skills"
     },
     {
-      "id": "innate-way",
-      "name": "innate-way",
-      "description": "where ideas come from,and how it process",
-      "color": "#8FA68E",
-      "repoUrl": "https://github.com/variableway/innate-way"
-    },
-    {
       "id": "cm-tokscale",
       "name": "cm-tokscale",
       "description": "my tokscale for model by data, copy and modify",
@@ -113,5 +106,5 @@
       "repoUrl": "https://github.com/variableway/innate-ai-art"
     }
   ],
-  "lastUpdated": "2026-05-13T03:51:25.890Z"
+  "lastUpdated": "2026-05-13T06:51:05.254Z"
 }
